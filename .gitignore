@@ -1,0 +1,6 @@
+*.bin
+*.meta
+*.data
+*.o
+*.pyc
+GCM/build/*
