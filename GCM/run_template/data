@@ -1,0 +1,90 @@
+#========================================== 
+#| Ryan's Auto-Generated MITgcm data file | 
+#========================================== 
+# Continuous equation parameters 
+ &PARM01
+# viscosity
+ viscAr=3.0E-04,
+ viscA4=9.0E8,
+ viscAh=12.0,
+# diffusivity
+ tempAdvScheme=80,
+ diffKrT=0.0E-5,
+ diffKhT=0.0,
+ diffK4T=0.0,
+ saltStepping=.FALSE.,
+ staggerTimeStep=.TRUE.,
+# initial vertical profiles of T and S
+ tRef=8.0000, 7.9718, 7.9437, 7.9127, 7.8761, 7.8310, 7.7775, 7.7169, 7.6465, 7.5648, 7.4718, 7.3662, 7.2451, 7.1056, 6.9465, 6.7662, 6.5634, 6.3352, 6.0761, 5.7831, 5.4521, 5.0775, 4.6549, 4.1775, 3.6380, 3.0282, 2.3380, 1.5775, 0.7887, 0.0000, 
+ sRef=30*35.0000,
+# equation of state
+ eosType='LINEAR',
+ tAlpha=2.0E-04,
+ sBeta=0.0,
+# boundary conditions
+ no_slip_sides=.TRUE.,
+ no_slip_bottom=.TRUE.,
+ bottomDragLinear=1.1E-03,
+ bottomDragQuadratic=0.0,
+# physical parameters
+ f0=-0.9E-04,
+ beta=1.0E-11,
+ gravity=9.81,
+# implicit diffusion and convective adjustment
+# ivdc_kappa=0.000000E+00,
+# ivdc_kappa=1.000000E+00, 
+ implicitDiffusion=.TRUE.,
+ implicitViscosity=.TRUE.,
+# exact volume conservation
+ exactConserv=.TRUE.,
+# C-V scheme for Coriolis term
+ useCDscheme=.FALSE.,
+# partial cells for smooth topography
+ hFacMin=5.0E-02,
+# file IO stuff
+ readBinaryPrec=64,
+ useSingleCpuIO=.TRUE.,
+ debugLevel=1,
+ &
+# elliptic solver parameters
+ &PARM02
+ cg2dMaxIters=500,
+ cg2dTargetResidual=1.000000E-09,
+ &
+# timestepping parameters
+ &PARM03
+ deltaT=600.0,
+ nIter0=0002592000,
+# 10 years
+ nTimeSteps=1036800,
+ abEps=0.1,
+# 6 months
+# chkPtFreq=15552000.,
+# 5 years
+ pChkptFreq=155520000.,
+# 20 years 
+# taveFreq=622080000.,
+ taveFreq=0.,
+# dumpFreq=1.,
+ dumpFreq=0.,
+# one month
+ monitorFreq=2592000.,
+# monitorFreq=1.,
+ tauThetaClimRelax=2592000.0,
+ dumpInitAndLast=.FALSE.,
+ pickupStrictlyMatch=.FALSE.,
+ &
+# gridding parameters
+ &PARM04
+ usingCartesianGrid=.TRUE.,
+ delX=400*5000.,
+ delY=400*5000.,
+ delR=10.0, 10.0, 10.0, 12.0, 14.0, 16.0, 19.0, 22.0, 26.0, 30.0, 36.0, 42.0, 50.0, 60.0, 72.0, 85., 102., 23*103.,
+ &
+# Input datasets
+ &PARM05
+ bathyFile='bathyFile.bin',
+ zonalWindFile='zonalWindFile.bin',
+ thetaClimFile='thetaClimFile.bin',
+ hydrogThetaFile='hydrogThetaFile.bin',
+ &

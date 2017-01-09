@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#PBS -l walltime=24:00:00
+#PBS -N taux1000_rb0110
+#PBS -l select=16:ncpus=16:mpiprocs=16:model=san
+#PBS -m abe
+
+RUNDIR=$PBS_O_WORKDIR
+
+echo "Running MITgcm in $RUNDIR"
+cd $RUNDIR
+module purge
+module load comp-intel/2011.7.256 mpi-sgi/mpt.2.06a67 netcdf/4.0
+remove_nc_files.sh
+mpiexec -n 256 ./mitgcmuv
+

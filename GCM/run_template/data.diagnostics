@@ -1,0 +1,9 @@
+# diagnostics for diffusivity tensor
+ &diagnostics_list
+  diag_mnc=.FALSE.,
+  frequency(1) = -172800.,
+   filename(1) = 'THETA',
+   fields(1,1) = 'THETA   ',
+ & 
+ &DIAG_STATIS_PARMS
+ &

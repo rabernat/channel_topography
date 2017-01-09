@@ -1,0 +1,19 @@
+This file describes the convention for naming run directories.
+The reference case is:
+
+run_taux2000_rb0110[_kv0000]
+
+Four significant figures are given for each parameter
+
+- taux = zonal wind stress magnitude,
+         units: 10^-4 N m^-2
+         (so taux2000 = 0.2 N m^-2)
+
+- rb =   linear bottom drag parameter
+         units: 10^-5 m s^-1
+         (so rb0110 = 1.1E-3 m/s)
+         corresponds with MITgcm parameter bottomDragLinear
+
+- kv =   vertical diffusivity
+         units: 10^-6 m s^-2
+         [if specified, otherwise assumed zero]

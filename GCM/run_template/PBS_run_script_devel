@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#PBS -q pbspl3
+#PBS -l walltime=2:00:00
+#PBS -N chan
+#PBS -l select=22:ncpus=12:model=wes
+#PBS -m abe
+
+RUNDIR=$PBS_O_WORKDIR
+
+echo "Running MITgcm in $RUNDIR"
+cd $RUNDIR
+module load comp-intel/11.1.046  mpi/mpt.1.25 netcdf/3.6.0/intel
+remove_nc_files.sh
+mpiexec -n 256 ./mitgcmuv
+
